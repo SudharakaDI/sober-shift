@@ -1,9 +1,12 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, Users, TrendingDown, DollarSign, Shield } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { ChallengePreview } from "@/components/challenge-preview"
 
 // Placeholder data - would be replaced with API calls
 const roiStats = [
@@ -137,8 +140,12 @@ export default function SoberShiftLanding() {
               and improve employee well-being through comprehensive addiction support programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg">
-                Request Demo
+              <Button
+                size="lg"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg"
+                onClick={() => (window.location.href = "/onboarding")}
+              >
+                Start Your Challenge
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-4 text-lg bg-transparent">
                 View Case Studies
@@ -177,6 +184,9 @@ export default function SoberShiftLanding() {
           </div>
         </div>
       </section>
+
+      {/* Challenge Preview Section */}
+      <ChallengePreview />
 
       {/* Pricing Section */}
       <section id="pricing" className="py-20">
@@ -221,8 +231,9 @@ export default function SoberShiftLanding() {
                   <Button
                     className={`w-full ${tier.popular ? "bg-emerald-600 hover:bg-emerald-700 text-white" : "bg-gray-900 hover:bg-gray-800 text-white"}`}
                     size="lg"
+                    onClick={() => (window.location.href = "/onboarding")}
                   >
-                    Request Demo
+                    Start Your Challenge
                   </Button>
                 </CardContent>
               </Card>
@@ -300,13 +311,15 @@ export default function SoberShiftLanding() {
               size="lg"
               variant="secondary"
               className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4 text-lg"
+              onClick={() => (window.location.href = "/onboarding")}
             >
-              Request Demo
+              Start Your Challenge
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-emerald-600 px-8 py-4 text-lg bg-transparent"
+              onClick={() => (window.location.href = "/onboarding")}
             >
               Download ROI Calculator
             </Button>
